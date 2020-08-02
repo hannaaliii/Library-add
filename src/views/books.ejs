@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=title%></title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm " style="background-color: rgba(8, 8, 99, 0.685)">
+        <ul class=" nav head1">
+            <%for(i=0;i<nav.length;i++){%>
+                <li class="nav-item">
+                    <a class="nav-link" href="<%=nav[i].link%>"><%=nav[i].title%></a>
+                </li>
+             <%}%>
+        </ul>
+    </nav>
+    <div class="jumbotron jumbotron-fluid next">
+        <h1><%=title%></h1>
+    </div>
+    <div class="im">
+        
+    </div>
+
+    <div class="container parent">
+        <%for(i=0;i<book.length;i++){%>
+        <div>
+            <img class="a" src="/images/<%=book[i].image%>" alt="not found">
+            <div class="aa">
+                <h4 style="color: slategrey;"><b><%=book[i].title%></b></h4>
+                <h6><span class="lb"><b><%=book[i].author%></b></span></h6>
+                <p class="pp"><%=book[i].genre%><b>.</b> <a href="/books/<%=book[i]._id%>">Read more</a></p>
+                <!-- <a href="/books/'d'<%=book[i]._id%>">Delete</a> -->
+                <!-- <form action="/books/del" method="POST">
+                    <input type="text" value="<%=book[i]._id%>" name="id">
+                    <button type="submit">Delete</button>
+                </form> -->
+
+                <!-- edit -->
+                <!-- <form action="/books/edit" method="POST">
+                    <input type="text" value="<%=book[i]._id%>" name="id">
+                    <button type="submit">Edit</button>
+                </form> -->
+            </div>
+        </div>
+        <hr>
+        <%}%>
+      
+        <button class="btn bg-primary">More</button>
+    </div>
+
+    <div class="last">
+        <h3 class="ff"><b>Follow us on</b></h3>
+        <div class="btn-group" >
+            <button type="button" class="btn btn-primary btn-lg">Twitter</button>
+            <button type="button" class="btn btn-secondary" style="background-color: midnightblue ">Facebook</button>
+            <button type="button" class="btn btn-danger">Google+</button>
+         </div>
+    </div>
+    <script src="/js/bootstrap.min.js"></script>
+</body>
+</html>

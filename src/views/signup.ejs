@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=title%></title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/signup.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm " style="background-color: rgba(8, 8, 99, 0.685)">
+        <ul class=" nav head1">
+            <%for(i=0;i<nav.length;i++){%>
+                <li class="nav-item">
+                    <a class="nav-link" href="<%=nav[i].link%>"><%=nav[i].title%></a>
+                </li>
+             <%}%>
+        </ul>
+    </nav>
+    <div class="container jumbotron">
+        <h2><label style="color: yellow;">Sign Up</label></h2>
+        <form action="/signup/success" method="POST" onsubmit="return validate()">
+            <div class="form-group">
+                <label style="color: yellow;">Name</label>
+                <input type="text" class="form-control" name="name" id="name" placeholder="Name" onkeyup="caps()">
+            </div>
+            <div class="from-group">
+                <label style="color: yellow;">Age</label>
+                <input type="number" name="age" id="age" class="form-control" placeholder="Age">
+            </div><br>
+            <div class="form-group">
+                <label style="color: yellow;">Gender</label><br>
+
+              <div class="form-check">
+                <label style="color: yellow;" class="form-check-label">
+                <input type="radio" class="form-check-input" value="male" id="rm" name="gen"> Male
+                </label><br>
+                <label style="color: yellow;" class="form-check-label">
+                <input type="radio" class="form-check-input" value="female" id="rf" name="gen">Female
+                </label><br>
+                <label style="color: yellow;" class="form-check-label">
+                <input type="radio" class="form-check-input" value="others" id="ro" name="gen">Others
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+                <label style="color: yellow;">Authority</label>
+                <div class="dropdown">
+                    <select name="authority" id="occu">
+                        <option value="">Select One</option>
+                        <option value="admin" id="wr">Admin</option>
+                        <option value="staff" id="nwr">Staff</option>
+                        <option value="student" id="std">Student</option>
+                      </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label style="color: yellow;">Email</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="example@gmail.com">
+            </div>
+
+            <div class="form-group">
+                <label style="color: yellow;">Phone</label>
+                <input type="number" id="ph" name="phone" class="form-control" placeholder="XXX-XXX-XXXX">
+            </div>
+
+            <div class="form-group">
+                <label style="color: yellow;">Password</label>
+                <input type="password" id="pw" name="password" class="form-control" placeholder="Should have atleast 5 characters" onkeyup="validpw()">
+                <p id="res"></p>
+            </div>
+
+            <div class="form-group">
+                <label style="color: yellow;">Re-enter Password</label>
+                <input type="password" id="rpw" class="form-control" placeholder="password" onkeyup="validrpw()">
+                <p id="res1"><b></b></p>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-lg btn-block btn-outline-warning"><b>Sign up</b></button>
+            </div>
+
+            <div class="form-group">
+                <button type="reset" class="btn btn-lg btn-block btn-outline-success" style="color: yellow;"><b>Reset</b></button>
+            </div>
+        </form>
+    </div>
+    <div class="last">
+        <h3 class="ff"><b>Follow us on</b></h3>
+        <div class="btn-group" >
+            <button type="button" class="btn btn-primary btn-lg">Twitter</button>
+            <button type="button" class="btn btn-secondary" style="background-color: midnightblue ">Facebook</button>
+            <button type="button" class="btn btn-danger">Google+</button>
+         </div>
+    </div>
+    <script src="js/signup.js"></script>
+</body>
+</html>
